@@ -1,28 +1,33 @@
 import React, {useState} from "react";
 
-export default function About() {
-    const [myStyle, setMyStyle]=useState({
-        color: 'white',
-        backgroundColor: 'black'
-    })
+export default function About(props) {
+    // const [myStyle, setMyStyle]=useState({
+    //     color: 'white',
+    //     backgroundColor: 'black'
+    // })
 
-    const[btntext, setBtnText]=useState('Enable light mode')
+    // const[btntext, setBtnText]=useState('Enable light mode')
 
-    const togglecase=()=>{
-        if(myStyle.color=='white'){
-            setMyStyle({
-                color: 'black',
-                backgroundColor: 'white'
-        })
-        setBtnText('Enable dark mode')
-    }
-        else{
-            setMyStyle({
-                color: 'white',
-                backgroundColor: 'black'
-            })
-            setBtnText('Enable  mode')
-        }
+    // const togglecase=()=>{
+    //     if(myStyle.color=='white'){
+    //         setMyStyle({
+    //             color: 'black',
+    //             backgroundColor: 'white'
+    //     })
+    //     setBtnText('Enable dark mode')
+    // }
+    //     else{
+    //         setMyStyle({
+    //             color: 'white',
+    //             backgroundColor: 'black'
+    //         })
+    //         setBtnText('Enable  mode')
+    //     }
+    // }
+
+    let myStyle={
+      color: props.mode==='dark'?'white':'#042743',
+      backgroundColor: props.mode==='dark'?'#042743 ':'white'
     }
   return (
     <div className="container" style={myStyle}>
@@ -39,7 +44,7 @@ export default function About() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              <strong>Analyze your Text</strong>
             </button>
           </h2>
           <div
@@ -48,14 +53,7 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            Text analysis generally involves examining and interpreting the content, structure, and context of a text to extract meaningful insights. This can include understanding the text's main ideas, tone, and mood, identifying key themes and patterns, and assessing its impact or implications. The goal is to gain a deeper understanding of the text's message, effectiveness, and relevance.
             </div>
           </div>
         </div>
@@ -70,7 +68,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+              <strong>Free to use</strong>
             </button>
           </h2>
           <div
@@ -79,14 +77,7 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            Text Analyzer is a free tool designed to help users examine and interpret written content. It provides insights into the meaning, themes, and structure of texts, allowing users to understand main ideas, emotional tone, and overall significance. With its user-friendly interface, Text Analyzer makes it easy to break down and assess text components, helping users gain a deeper understanding of their content.
             </div>
           </div>
         </div>
@@ -101,7 +92,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+              <strong>Browser Compatible</strong>
             </button>
           </h2>
           <div
@@ -110,21 +101,14 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            Text Analyzer is a browser-compatible, free tool that helps users examine and interpret written content directly from their web browser. It provides insights into the meaning, themes, and structure of texts, allowing users to understand key ideas, emotional tone, and overall significance. With its easy-to-use interface, Text Analyzer works seamlessly across various browsers, making it accessible and convenient for users to analyze text without needing additional software.
             </div>
           </div>
         </div>
       </div>
-      <div className="container my-4">
+      {/* <div className="container my-4">
       <button type="button" onClick={togglecase} class="btn btn-primary">{btntext}</button>
-      </div>
+      </div> */}
     </div>
   );
 }
